@@ -1,0 +1,21 @@
+
+<div class="container-fluid">
+    <div class="header">
+        <h1>EmployeeLogin</h1>
+    </div>
+    <form [formGroup]="employeeLoginForm">
+        <ng-container *ngFor="let control of  empLoginDynamicArray">
+            <div [ngSwitch]="control.Type" class="col-md-6">
+                <mat-form-field *ngSwitchCase="'input'" appearance="outline">
+                    <mat-label>{{control.Label}}</mat-label>
+                    <input matInput [type]="control.type" [formControlName]="control.ID">
+                </mat-form-field>
+            </div>
+        </ng-container>
+        <button type="submit" mat-button color="primary" (click)="Login()">Login</button>
+        <a routerLink="/employeeRegister">New Employee</a>
+    </form>
+</div>
+{{employeeLoginForm.value | json}} 
+
+

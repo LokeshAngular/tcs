@@ -1,0 +1,22 @@
+
+mat-nav-list{
+    mat-expansion-panel{
+        .list li {
+            list-style: none;
+            width: 105px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            padding-top: 3px;
+            border-radius: 5px;
+            margin-bottom: 3px;
+            text-align: center;
+        }
+    
+        .list li:hover{
+            cursor: pointer;
+            background:bisque;
+            color: black;
+        }
+    }
+}

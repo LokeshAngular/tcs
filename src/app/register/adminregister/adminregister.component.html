@@ -1,0 +1,21 @@
+<div>
+    <h1 style="text-align: center;">AdminRegisterForm</h1>
+</div>
+<div class="container-fluid">
+    <form [formGroup]="registerForm">
+        <div class="row" style="display: flex;" >
+            <div [ngSwitch]="control.Type" class="col-md-6" *ngFor="let control of dynamicFormArray" >
+                <mat-form-field *ngSwitchCase="'input'" appearance="outline">
+                    <mat-label>{{control.Label}}</mat-label>
+                    <input matInput [type]="control.type" placeholder="Input" [formControlName]="control.ID">
+                </mat-form-field>
+                <mat-checkbox *ngSwitchCase="'checkbox'" class="example-margin" >
+                    <mat-label>{{control.Label}}</mat-label>
+                </mat-checkbox>
+            </div>
+        </div>
+    </form>
+    <button mat-button color="primary" (click)="Onclick()">Submitt</button>
+    <button mat-button color="primary" routerLink="/admin">Already Registered</button>
+</div>
+{{registerForm.value | json}}

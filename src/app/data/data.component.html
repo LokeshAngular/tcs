@@ -1,0 +1,18 @@
+
+<div class="container-fluid">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li [ngbNavItem]="1">
+            <a style="margin-left: 500px;" ngbNavLink>Admin</a>
+            <ng-template ngbNavContent>
+                <app-admindata></app-admindata>
+            </ng-template>
+        </li>
+        <!-- <li [ngbNavItem]="2">
+            <a ngbNavLink>EmployeeLogin</a>
+            <ng-template ngbNavContent>
+                <app-employeedata></app-employeedata>
+            </ng-template>
+        </li> -->
+    </ul>
+</div>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

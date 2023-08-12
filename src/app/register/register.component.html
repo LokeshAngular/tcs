@@ -1,0 +1,20 @@
+<div class="loginHeader">
+    <h1>Register</h1>
+</div>
+<div class="container-fluid">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li [ngbNavItem]="1">
+            <a ngbNavLink>AdminRegister</a>
+            <ng-template ngbNavContent>
+                <app-adminregister></app-adminregister>
+            </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+            <a ngbNavLink>EmployeeRegister</a>
+            <ng-template ngbNavContent>
+                <app-employeeregister></app-employeeregister>
+            </ng-template>
+        </li>
+    </ul>
+</div>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
